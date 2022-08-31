@@ -1,0 +1,11 @@
+<div class="list-group">
+    <a href="#" class="list-group-item list-group-item-action active" aria-current="true" routerLink="product">
+        {{title}}</a><br>
+    <a *ngFor="let urunlerim of markam" href="#" class="list-group-item list-group-item-success" 
+    routerLink="product/kategori/{{urunlerim.id}}">{{urunlerim.name}}</a>
+</div>
+<div class="list-group">
+    <h5 class="list-group-item list-group-item-action active">Ürün Ekleme Menüsü</h5>
+    <a href="#" class="list-group-item list-group-item-success" aria-current="true" 
+    routerLink="product-add-1">Ürün Ekleme</a>
+</div>

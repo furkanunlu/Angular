@@ -1,0 +1,26 @@
+<p>login works!</p>
+<main>
+    <form class="form-signin" #LoginForm="ngForm" (ngSubmit)="login(LoginForm)">
+      <img class="mb-4" src="https://cdnuploads.aa.com.tr/uploads/Contents/2018/04/12/thumbs_b_c_e5a4e0d3eff566c02b3d8a48116767d3.jpg" 
+      alt="" width="200" height="150">
+      <h1 class="h3 mb-3 fw-normal">Lütfen Giriş Yapınız</h1>  
+      <div class="form-floating">
+        <input type="text"  #UserName="ngModel" 
+        [(ngModel)]="user.UserName"class="form-control" id="UserName" name="UserName" placeholder="Kullanıcı Adı" 
+        required autofocus>
+        <label for="floatingInput">Kullanıcı Adı</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" #password="ngModel" 
+        [(ngModel)]="user.password" class="form-control" id="password" name="password" 
+        placeholder="Parola" required>
+        <label for="floatingPassword">Parolanız</label>
+      </div>  
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Kayıtlı Kalsın Mı?
+        </label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Giriş</button>      
+    </form>
+  </main>

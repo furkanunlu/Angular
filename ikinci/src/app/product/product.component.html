@@ -1,0 +1,27 @@
+<h3 *ngIf="marka;else noproduct">
+    <div class="alert alert-warning" role="alert">
+        {{name}}
+    </div>
+</h3>
+<ng-template #noproduct>
+    <div class="alert alert-warning" role="alert">
+        Bu Ürün yok
+    </div>
+</ng-template>
+<div class="mb-3">
+    <input class="form-control" 
+    id="productName" 
+    placeholder="Arama Metnini Giriniz:"
+    [(ngModel)]="filterText">
+</div>
+<strong>Aradığınız Kelime: </strong>{{filterText}}
+<div class="row" style="text-align: center;">
+
+    <div *ngFor="let urunlerim of marka | productFiltre:filterText" class="card" style="width: 18rem;">
+        <img src={{urunlerim.url}} class="card-img-top" alt="{{urunlerim.alt}}">
+        <div class="card-body">
+            <h5 class="card-title">{{urunlerim.name}}</h5>
+            <p class="card-text">Ürün Adı : {{urunlerim.description}}</p>
+            <a (click)="addToCard(urunlerim)" class="btn btn-primary">
+                Ürün Fiyatı : {{urunlerim.price | currency:'TRY
+                ':true:"1.2-2"}}</a></div></div></div>
